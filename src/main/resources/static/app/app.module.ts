@@ -6,6 +6,8 @@ import {TestService} from "./services/test.service";
 import {HttpModule} from "@angular/http";
 import {PersonDetailComponent} from "./component/person-detail.component";
 import {BootstrapTestComponent} from "./component/bootstrap-test.component";
+import {PersonListComponent} from "./component/person-list.component";
+import {Bootstrap4TestComponent} from "./component/bootstrap4-test.component";
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {BootstrapTestComponent} from "./component/bootstrap-test.component";
   declarations: [
     AppComponent,
     PersonDetailComponent,
+    PersonListComponent,
     BootstrapTestComponent,
+    Bootstrap4TestComponent,
   ],
   providers: [
     TestService
