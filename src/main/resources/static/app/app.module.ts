@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import {TestService} from "./services/test.service";
 import {HttpModule} from "@angular/http";
+import {PersonDetailComponent} from "./component/person-detail.component";
+import {BootstrapTestComponent} from "./component/bootstrap-test.component";
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import {HttpModule} from "@angular/http";
   ],
   declarations: [
     AppComponent,
-
+    PersonDetailComponent,
+    BootstrapTestComponent,
   ],
   providers: [
     TestService
