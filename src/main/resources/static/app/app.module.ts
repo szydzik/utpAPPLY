@@ -10,12 +10,21 @@ import {Bootstrap4TestComponent} from "./component/bootstrap4-test.component";
 import {NavBarComponent} from "./component/nav-bar.component";
 import {SidebarComponent} from "./shared/sidebar/side-bar.component";
 import {PersonService} from "./services/person.service";
+import {Routes, RouterModule} from "@angular/router";
 
+const appRoutes: Routes = [
+  { path: 'person-list', component: PersonListComponent },
+  { path: 'person-detail', component: PersonDetailComponent },
+  { path: 'bootstrap4-test', component: Bootstrap4TestComponent },
+  // { path: '', component: AppComponent },
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   imports:      [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     AppComponent,

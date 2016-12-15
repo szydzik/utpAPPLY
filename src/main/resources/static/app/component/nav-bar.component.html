@@ -1,4 +1,5 @@
 <nav class="navbar navbar-dark bg-inverse navbar-full">
+  <div>
   <a class="navbar-brand" href="#">
     <!--<img src="http://mapy.utp.edu.pl/images/utp.svg" width="30" height="30" class="d-inline-block align-top" alt="">-->
     <img src="../../assets/utp.svg" width="30" height="30" class="d-inline-block align-top" alt=""/>
@@ -9,35 +10,26 @@
       <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <a routerLink="/person-list" routerLinkActive="active" class="nav-link" href="#" >Person List</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
+      <a routerLink="/person-detail" routerLinkActive="active" class="nav-link" href="#" >Person List</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
       <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+        <a class="dropdown-item" routerLink="/person-list" routerLinkActive="active">Person List</a>
+        <a class="dropdown-item" routerLink="/person-detail" routerLinkActive="active">Person Detail</a>
       </div>
     </li>
 
 
-    <li class="dropdown nav-item" dropdown>
-      <a href="javascript:;" id="single-button" class="nav-link dropdown-toggle" dropdownToggle >
-        <i class="fa fa-user"></i> John Smith <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="single-button">
-
-      </ul>
-    </li>
-
 
   </ul>
-  <form class="form-inline float-xs-right">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
+  <!--<form class="form-inline float-xs-right">-->
+    <!--<input class="form-control" type="text" placeholder="Search">-->
+    <!--<button class="btn btn-outline-success" type="submit">Search</button>-->
+  <!--</form>-->
+  </div>
 </nav>
 

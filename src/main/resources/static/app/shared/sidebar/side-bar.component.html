@@ -1,16 +1,27 @@
-<nav class="navbar navbar-dark bg-inverse">
-  <a class="navbar-brand" href="#">
-    <!--<img src="../" width="30" height="30" class="d-inline-block align-top" alt="">-->
-    Bootstrap
-  </a>
-<div>
-  <ul class="navbar-nav list-group">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-    </li>
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-    </li>
+<button class="btn btn-default" id="toggle-sidebar" type="button" (click)="eventCalled()">
+  &#9776;
+</button>
+<nav class="navbar-dark bg-inverse" [ngClass]="{sidebarPushRight: isActive}">
+  <ul class="list-group">
+    <a class="list-group-item">elo</a>
+    <a class="list-group-item">elo</a>
+    <a class="list-group-item">elo</a>
+    <a class="list-group-item">elo</a>
+
+    <div class="nested-menu">
+      <a class="list-group-item" (click)="addExpandClass('pages')">
+        <span><i class="fa fa-plus"></i> &nbsp; Menu</span>
+      </a>
+      <li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
+        <ul class="submenu">
+          <li>
+            <a href><span>Submenu</span></a>
+          </li>
+          <li>
+            <a href><span>Submenu</span></a>
+          </li>
+        </ul>
+      </li>
+    </div>
   </ul>
-</div>
 </nav>
