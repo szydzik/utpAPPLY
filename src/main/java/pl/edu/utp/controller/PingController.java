@@ -12,23 +12,17 @@ import java.util.List;
 @RequestMapping("/api")
 public class PingController {
 
-    @RequestMapping("/test")
+    @RequestMapping("/person-list")
     public List<Person> test() {
         List<Person> t = new ArrayList<>();
-        t.add(new Person(1,"test") );
-        t.add(new Person(2,"test2"));
+        t.add(new Person(1,"Adam", "Małysz", 45) );
+        t.add(new Person(2,"Tomek", "Kowalski", 45) );
         return t;
     }
 
-    @RequestMapping("/test2")
-    public String test2(){
-        String s = "test2";
-        return s;
+    @RequestMapping("/ping")
+    public String ping(){
+        return "pong";
     }
 
-    @RequestMapping("/test3")
-    public String test3(){
-        String s = "Test3333";
-        return s;
-    }
 }

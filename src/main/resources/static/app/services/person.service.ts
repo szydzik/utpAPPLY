@@ -4,17 +4,13 @@ import {Http, Headers, RequestOptions} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class TestService {
+export class PersonService {
 
   constructor(private http: Http) {
   }
 
-
-  /* ----------------------------------------------- Mail */
-
-
-  test(): Promise<Person> {
-    return this.http.get("http://localhost:8080/api/test")
+  getPersons(): Promise<Person> {
+    return this.http.get("http://localhost:8080/api/person-list")
       .toPromise()
       .then((res) => {
         return res.json();
