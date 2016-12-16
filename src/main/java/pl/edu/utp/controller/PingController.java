@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.utp.model.Person;
+import pl.edu.utp.model.Address;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +18,8 @@ public class PingController {
     @RequestMapping("/person-list")
     public List<Person> test() {
         List<Person> t = new ArrayList<>();
-        t.add(new Person("Adam", "Małysz", 45) );
-        t.add(new Person("Tomek", "Kowalski", 45) );
+        t.add(new Person("Adam", "Małysz", 45, new Address("Kasprzaka")) );
+        t.add(new Person("Tomek", "Kowalski", 45, new Address("Kasprzaka")) );
         return t;
     }
 
