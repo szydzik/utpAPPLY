@@ -1,6 +1,8 @@
 package pl.edu.utp.controller;
 
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.edu.utp.model.Person;
@@ -23,6 +25,12 @@ public class PingController {
     @RequestMapping("/ping")
     public String ping(){
         return "pong";
+    }
+
+    @PostMapping(path = "/person-list/get", produces = "application/json", consumes = "application/json")
+    public Person getPersons(@RequestBody Person person) {
+        person.setId(1);
+        return person;
     }
 
 }
