@@ -17,8 +17,8 @@ public class PingController {
     @RequestMapping("/person-list")
     public List<Person> test() {
         List<Person> t = new ArrayList<>();
-        t.add(new Person(1,"Adam", "Małysz", 45) );
-        t.add(new Person(2,"Tomek", "Kowalski", 45) );
+        t.add(new Person("Adam", "Małysz", 45) );
+        t.add(new Person("Tomek", "Kowalski", 45) );
         return t;
     }
 

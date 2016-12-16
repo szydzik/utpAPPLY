@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Bartosz on 2016-12-16.
  */
-public interface PersonRepository extends CrudRepository<Person, Long> {
+public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     List<Person> findAll();
     Person findByName(String name);
