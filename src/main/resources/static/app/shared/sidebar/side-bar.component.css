@@ -1,41 +1,31 @@
-body {
-  padding-top: 50px;
+/* Remove the navbar's default margin-bottom and rounded borders */
+/*.navbar {*/
+  /*margin-bottom: 0;*/
+  /*border-radius: 0;*/
+/*}*/
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
 }
+
+/* Set black background color, white text and some padding */
 footer {
-  padding-left: 15px;
-  padding-right: 15px;
+  background-color: #555;
+  color: white;
+  padding: 15px;
 }
 
-/*
- * Off Canvas
- * --------------------------------------------------
- */
-@media screen and (max-width: 768px) {
-  .row-offcanvas {
-    position: relative;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
   }
-
-  .row-offcanvas-left
-  .sidebar-offcanvas {
-    left: -40%;
-  }
-
-  .row-offcanvas-left.active {
-    left: 40%;
-  }
-
-  .sidebar-offcanvas {
-    position: absolute;
-    top: 0;
-    width: 40%;
-    margin-left: 12px;
-  }
-}
-
-.sidebar-offcanvas {
-  background-color:#eee;
-  padding:15px;
+  .row.content {height:auto;}
 }

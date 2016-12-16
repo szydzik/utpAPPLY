@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
-import {Person} from "../model/Person";
-import {PersonService} from "../services/person.service";
+import {Person} from "../../model/Person";
+import {PersonService} from "../../services/person.service";
 
 @Component({
   moduleId: module.id,
