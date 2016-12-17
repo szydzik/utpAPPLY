@@ -53,7 +53,7 @@ public class PersonController {
 
     @DeleteMapping(value = "/{id}")
     public void deleteById(@PathVariable("id") Integer id) {
-        personRepository.deleteById(id);
+        personRepository.delete(id);
     }
 
 }
