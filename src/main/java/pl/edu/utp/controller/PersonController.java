@@ -38,11 +38,12 @@ public class PersonController {
 
     @PutMapping
     public void update(@RequestBody Person person) {
-
+        personRepository.save(person);
     }
 
     @PutMapping(value = "/{id}")
-    public void updateById(@PathVariable("id") Integer id, @RequestBody Person person) {
+    public void updateNameById(@PathVariable("id") Integer id, @RequestBody String name) {
+        personRepository.update(id, name);
 
     }
 
