@@ -1,8 +1,10 @@
 package pl.edu.utp.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.utp.model.Address;
 import pl.edu.utp.model.Person;
+import pl.edu.utp.repository.PersonRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +15,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/person")
 public class PersonController {
+
+    PersonRepository personRepository;
+
+    @Autowired
+    public PersonController(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     @RequestMapping("")
     public List<Person> getAll() {
@@ -27,24 +36,24 @@ public class PersonController {
         return new Person(1,"Adam", "Małysz", 45,  new Address(1, "Stawowa 12"));
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public void add(@RequestBody Person person) {
-
+        personRepository.save(person);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    @PutMapping
     public void update(@RequestBody Person person) {
 
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public void updateById(@PathVariable("id") Long id, @RequestBody Person person) {
+    @PutMapping(value = "/{id}")
+    public void updateById(@PathVariable("id") Integer id, @RequestBody Person person) {
 
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete() {
-
+    @DeleteMapping(value = "/{id}")
+    public void deleteById(@PathVariable("id") Integer id) {
+        personRepository.deleteById(id);
     }
 
 }
