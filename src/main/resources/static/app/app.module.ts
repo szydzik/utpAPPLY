@@ -14,6 +14,7 @@ import {Routes, RouterModule} from "@angular/router";
 import {FooterComponent} from "./shared/footer/footer.component";
 import {HomePageComponent} from "./component/homepage/home-page.component";
 import {FormsModule} from "@angular/forms";
+import {Configuration} from "./app.constants";
 
 const appRoutes: Routes = [
   { path: 'person-list', component: PersonListComponent },
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     PersonService,
+    Configuration,
   ],
   bootstrap:    [ AppComponent ]
 })
