@@ -1,29 +1,52 @@
 <div class="container">
   <h1>Person form</h1>
-  <form>
 
+
+  <!--<div *ngIf="person">-->
+    <!--<h2>{{person.name}} details!</h2>-->
+    <!--<div><label>id: </label>{{person.id}}</div>-->
+    <!--<div>-->
+      <!--<label>name: </label>-->
+      <!--<input [(ngModel)]="person.name" placeholder="name"/>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+  <form class = "col-lg-6 col-md-5" (ngSubmit)="onSubmit()" #personDetailForm="ngForm">
+    {{diagnostic}}
     <div class="form-group">
       <label for="id">Id</label>
-      <input type="text" class="form-control" id="id" disabled>
+      <input type="text" class="form-control" id="id" disabled [(ngModel)]="person.id" name="id">
     </div>
 
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required>
+      <input type="text" class="form-control" id="name"
+             [(ngModel)]="person.name" name="name"
+              #name="ngModel">
+      <div [hidden]="name.valid || name.pristine || false"
+           class="alert alert-danger">
+        Name is required
+      </div>
     </div>
 
     <div class="form-group">
       <label for="surname">Surname</label>
-      <input type="surname" class="form-control" id="surname">
+      <input type="surname" class="form-control" id="surname" [(ngModel)]="person.surname" name="surname">
     </div>
 
     <div class="form-group">
       <label for="age">Age</label>
-      <select class="form-control" id="age" required>
+      <select class="form-control" id="age"
+              required
+              [(ngModel)]="person.age" name="age"
+              #age="ngModel">
         <option *ngFor="let val of ages" [value]="val">{{val}}</option>
       </select>
     </div>
 
-    <button type="submit" class="btn btn-default">Submit</button>
+
+    <button type="submit" class="btn btn-default" [disabled]="!personDetailForm.form.valid">Submit</button>
+    <button type="button" class="btn btn-default" (click)="newPerson(); personDetailForm.reset()">New Person</button>
   </form>
 </div>

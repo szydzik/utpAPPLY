@@ -15,23 +15,9 @@ import java.util.List;
 @RequestMapping("/api")
 public class PingController {
 
-    @RequestMapping("/person-list")
-    public List<Person> test() {
-        List<Person> t = new ArrayList<>();
-        t.add(new Person("Adam", "Małysz", 45, new Address("Kasprzaka")) );
-        t.add(new Person("Tomek", "Kowalski", 45, new Address("Kasprzaka")) );
-        return t;
-    }
-
     @RequestMapping("/ping")
     public String ping(){
         return "pong";
-    }
-
-    @PostMapping(path = "/person-list/get", produces = "application/json", consumes = "application/json")
-    public Person getPersons(@RequestBody Person person) {
-        person.setId(1);
-        return person;
     }
 
 }

@@ -1,4 +1,4 @@
-package pl.edu.utp.Repository;
+package pl.edu.utp.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import pl.edu.utp.model.Person;
