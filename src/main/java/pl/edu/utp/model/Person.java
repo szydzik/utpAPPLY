@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Person implements Serializable{
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;

@@ -2,7 +2,7 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent }  from './app.component';
-import {HttpModule} from "@angular/http";
+import {HttpModule, JsonpModule} from "@angular/http";
 import {PersonDetailComponent} from "./component/person/person-details.component";
 import {BootstrapTestComponent} from "./component/test/bootstrap-test.component";
 import {PersonListComponent} from "./component/person/person-list.component";
@@ -32,7 +32,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {
       useHash: true
     }),
-    FormsModule
+    FormsModule,
+    JsonpModule,
   ],
   declarations: [
     AppComponent,

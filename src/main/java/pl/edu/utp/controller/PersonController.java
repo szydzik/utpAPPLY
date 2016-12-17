@@ -2,11 +2,9 @@ package pl.edu.utp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.edu.utp.model.Address;
 import pl.edu.utp.model.Person;
 import pl.edu.utp.repository.PersonRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,15 +23,12 @@ public class PersonController {
 
     @RequestMapping("")
     public List<Person> getAll() {
-        List<Person> t = new ArrayList<>();
-        t.add(new Person(1,"Adam", "Małysz", 45,  new Address(1, "Stawowa 12")));
-        t.add(new Person(1,"Tomek", "Kowalski", 45, new Address(2,"Kasprzaka 4")));
-        return t;
+        return personRepository.findAll();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Person greetings(@PathVariable("id") Long id) {
-        return new Person(1,"Adam", "Małysz", 45,  new Address(1, "Stawowa 12"));
+        return personRepository.findOne(id);
     }
 
     @PostMapping
@@ -52,8 +47,8 @@ public class PersonController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public void deleteById(@PathVariable("id") Integer id) {
-        personRepository.deleteById(id);
+    public void deleteById(@PathVariable("id") Long id) {
+        personRepository.delete(id);
     }
 
 }

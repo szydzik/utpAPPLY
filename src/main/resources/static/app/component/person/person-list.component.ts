@@ -5,16 +5,27 @@ import {PersonService} from "../../services/person.service";
 @Component({
   moduleId: module.id,
   selector: 'person-list',
-  templateUrl: 'person-list.component.html'
+  templateUrl: 'person-list.component.html',
+  providers: [PersonService],
 })
 export class PersonListComponent{
 
   persons: Person;
+  errorMessage : string;
 
   constructor(private _service: PersonService){}
 
   ngOnInit(){
-    this._service.getPersons().then(res => this.persons = res);
+    this.getPersons();
+    // this._service.getPersons().then(res => this.persons = res);
+  }
+
+  getPersons() {
+    this._service.getAll()
+      .then(
+        value => this.persons = value,
+        error =>  this.errorMessage = <any>error
+      );
   }
 
 }

@@ -1,40 +1,42 @@
 <div class="container">
+  {{person | json}}
+  <!--{{person.name}}-->
   <h1>Person form</h1>
-  <form class="col-lg-4 col-md-4" (ngSubmit)="onSubmit()" #personDetailForm="ngForm">
-    <div class="form-group">
-      <label for="name">Id</label>
-      <input type="text" class="form-control" id="id" disabled
-             [(ngModel)]="person.id" name="id"
-             #id="ngModel">
+  <!--<form class="col-lg-4 col-md-4" (ngSubmit)="onSubmit()" #personDetailForm="ngForm">-->
+    <!--<div class="form-group">-->
+      <!--<label for="name">Id</label>-->
+      <!--<input type="text" class="form-control" id="id" required-->
+             <!--[(ngModel)]="person.id" name="id"-->
+             <!--#id="ngModel">-->
 
-    </div>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required
-             [(ngModel)]="person.name" name="name"
-             #name="ngModel">
-    </div>
-    <div class="form-group">
-      <label for="surname">Alter Ego</label>
-      <input type="surname" class="form-control" id="surname"
-             [(ngModel)]="person.surname" name="surname"
-             #surname="ngModel">
-    </div>
+    <!--</div>-->
+    <!--<div class="form-group">-->
+      <!--<label for="name">Name</label>-->
+      <!--<input type="text" class="form-control" id="name" required-->
+             <!--[(ngModel)]="person.name" name="name"-->
+             <!--#name="ngModel">-->
+    <!--</div>-->
+    <!--<div class="form-group">-->
+      <!--<label for="surname">Alter Ego</label>-->
+      <!--<input type="surname" class="form-control" id="surname"-->
+             <!--[(ngModel)]="person.surname" name="surname"-->
+             <!--#surname="ngModel">-->
+    <!--</div>-->
 
-    <div class="form-group">
-      <label for="age">Age</label>
-      <select class="form-control" id="age"
-                required
-                [(ngModel)]="person.age" name="age"
-                #age="ngModel" >
-          <option *ngFor="let val of ages" [value]="val">{{val}}</option>
-        </select>
-        <div [hidden]="age.valid || age.pristine" class="alert alert-danger">
-          Power is required
-        </div>
-      </div>
+    <!--<div class="form-group">-->
+      <!--<label for="age">Age</label>-->
+      <!--<select class="form-control" id="age"-->
+                <!--required-->
+                <!--[(ngModel)]="person.age" name="age"-->
+                <!--#age="ngModel" >-->
+          <!--<option *ngFor="let val of ages" [value]="val">{{val}}</option>-->
+        <!--</select>-->
+        <!--<div [hidden]="age.valid || age.pristine" class="alert alert-danger">-->
+          <!--Power is required-->
+        <!--</div>-->
+      <!--</div>-->
 
-    <button type="submit" class="btn btn-default" [disabled]="!personDetailForm.form.valid">Submit</button>
-    <button type="button" class="btn btn-default" (click)="newPerson(); personDetailForm.reset()">New Person</button>
-  </form>
+    <!--<button type="submit" class="btn btn-default" [disabled]="!personDetailForm.form.valid">Submit</button>-->
+    <!--<button type="button" class="btn btn-default" (click)="newPerson(); personDetailForm.reset()">New Person</button>-->
+  <!--</form>-->
 </div>

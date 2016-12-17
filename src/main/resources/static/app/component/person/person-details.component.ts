@@ -1,18 +1,24 @@
 import {Component} from "@angular/core";
 import {Person} from "../../model/Person";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {PersonService} from "../../services/person.service";
 
 @Component({
   moduleId: module.id,
   selector: 'person-details',
-  templateUrl: 'person-details.component.html'
+  templateUrl: 'person-details.component.html',
+  providers: [PersonService],
 })
 export class PersonDetailComponent  {
 
   ages = [0,1,2,3,4,5,6,7,8,9,10];
-  person =  new Person(11, "Grześ", "Dębkowski", this.ages[1]);
+  errorMessage: string;
+  person: Person;
+
+  constructor(private _service: PersonService){}
 
   ngOnInit() {
+    this.getPerson();
   }
 
 
@@ -24,7 +30,25 @@ export class PersonDetailComponent  {
 
   newPerson(){
     this.submitted = false;
-    this.person = new Person(100, '', '', 0);
   }
+
+  getPerson() {
+    console.log('ddddddddddd: '+this._service.getPerson());
+    this._service.getPerson()
+      .then(
+        (value: Person) => {console.log('Debug: ' + value); this.person = value;},
+        error =>  this.errorMessage = <any>error);
+
+    console.log('Error: '+this.errorMessage);
+    console.log('Person: '+this.person);
+  }
+
+  // addPerson (name: string) {
+  //   if (!name) { return; }
+  //   this._service.addPerson(this.person)
+  //     .then(
+  //       hero  => this.heroes.push(hero),
+  //       error =>  this.errorMessage = <any>error);
+  // }
 
 }
