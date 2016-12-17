@@ -1,21 +1,27 @@
 <div class="container">
   <h1>Person form</h1>
   <form>
+
     <div class="form-group">
-      <label for="name">Id</label>
+      <label for="id">Id</label>
       <input type="text" class="form-control" id="id" disabled>
     </div>
+
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" required>
     </div>
+
     <div class="form-group">
-      <label for="surname">Alter Ego</label>
+      <label for="surname">Surname</label>
       <input type="surname" class="form-control" id="surname">
     </div>
+
     <div class="form-group">
-      <label for="age">Alter Ego</label>
-      <input type="age" class="form-control" id="age">
+      <label for="age">Age</label>
+      <select class="form-control" id="age" required>
+        <option *ngFor="let val of ages" [value]="val">{{val}}</option>
+      </select>
     </div>
 
     <button type="submit" class="btn btn-default">Submit</button>
