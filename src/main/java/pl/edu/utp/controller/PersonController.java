@@ -27,4 +27,24 @@ public class PersonController {
         return new Person(1,"Adam", "Małysz", 45,  new Address(1, "Stawowa 12"));
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public void add(@RequestBody Person person) {
+
+    }
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public void update(@RequestBody Person person) {
+
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public void updateById(@PathVariable("id") Long id, @RequestBody Person person) {
+
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public void delete() {
+
+    }
+
 }
