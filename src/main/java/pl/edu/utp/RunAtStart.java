@@ -2,7 +2,7 @@ package pl.edu.utp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pl.edu.utp.Repository.PersonRepository;
+import pl.edu.utp.repository.PersonRepository;
 import pl.edu.utp.model.Address;
 import pl.edu.utp.model.Person;
 

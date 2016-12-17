@@ -13,6 +13,7 @@ import {PersonService} from "./services/person.service";
 import {Routes, RouterModule} from "@angular/router";
 import {FooterComponent} from "./shared/footer/footer.component";
 import {HomePageComponent} from "./component/homepage/home-page.component";
+import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   { path: 'person-list', component: PersonListComponent },
@@ -27,7 +28,10 @@ const appRoutes: Routes = [
   imports:      [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {
+      useHash: true
+    }),
+    FormsModule
   ],
   declarations: [
     AppComponent,

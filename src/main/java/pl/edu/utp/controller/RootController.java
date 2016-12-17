@@ -14,19 +14,4 @@ public class RootController {
         return "index";
     }
 
-    @RequestMapping("person-list")
-    public String personList(){
-        return "person-list";
-    }
-
-    @RequestMapping("person-details")
-    public String personDetails(){
-        return "person-details";
-    }
-
-    @RequestMapping("home-page")
-    public String homePage(){
-        return "home-page";
-    }
-
 }
