@@ -32,15 +32,32 @@ export class PersonDetailComponent  {
     this.submitted = false;
   }
 
-  getPerson() {
-    console.log('ddddddddddd: '+this._service.getPerson());
-    this._service.getPerson()
-      .then(
-        (value: Person) => {console.log('Debug: ' + value); this.person = value;},
-        error =>  this.errorMessage = <any>error);
+  // getPerson() {
+  //   console.log('ddddddddddd: '+this._service.getPerson());
+  //   this._service.getPerson()
+  //     .then(
+  //       (value: Person) => {console.log('Debug: ' + value); this.person = value;},
+  //       error =>  this.errorMessage = <any>error);
+  //
+  //   console.log('Error: '+this.errorMessage);
+  //   console.log('Person: '+this.person);
+  // }
 
-    console.log('Error: '+this.errorMessage);
-    console.log('Person: '+this.person);
+  getPerson() {
+    this._service
+      .getPerson()
+      .then((result) => {
+        console.log('ddddddddddd:', result);
+        return result;
+      })
+      .then(
+        value => this.person = value,
+        error =>  this.errorMessage = <any>error
+      )
+      .then(() => {
+        console.log('Error:', this.errorMessage);
+        console.log('Person:', this.person);
+      });
   }
 
   // addPerson (name: string) {
