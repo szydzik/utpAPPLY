@@ -11,7 +11,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Entity
-public class Person implements Serializable{
+public class Person {
+
     @Id
     @GeneratedValue
     private Long id;

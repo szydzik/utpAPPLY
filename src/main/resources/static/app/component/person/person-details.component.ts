@@ -11,7 +11,7 @@ import {PersonService} from "../../services/person.service";
 })
 export class PersonDetailComponent  {
 
-  ages = [0,1,2,3,4,5,6,7,8,9,10];
+  ages = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
   errorMessage: string;
   person: Person;
 
@@ -32,22 +32,10 @@ export class PersonDetailComponent  {
     this.submitted = false;
   }
 
-  // getPerson() {
-  //   console.log('ddddddddddd: '+this._service.getPerson());
-  //   this._service.getPerson()
-  //     .then(
-  //       (value: Person) => {console.log('Debug: ' + value); this.person = value;},
-  //       error =>  this.errorMessage = <any>error);
-  //
-  //   console.log('Error: '+this.errorMessage);
-  //   console.log('Person: '+this.person);
-  // }
-
   getPerson() {
     this._service
-      .getPerson()
+      .find()
       .then((result) => {
-        console.log('ddddddddddd:', result);
         return result;
       })
       .then(
@@ -55,9 +43,11 @@ export class PersonDetailComponent  {
         error =>  this.errorMessage = <any>error
       )
       .then(() => {
-        console.log('Error:', this.errorMessage);
+        if (this.errorMessage) {
+          console.log('Error:', this.errorMessage);
+        }
         console.log('Person:', this.person);
-      });
+    });
   }
 
   // addPerson (name: string) {

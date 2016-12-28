@@ -29,14 +29,20 @@ public class RunAtStart {
 
         Person p1 = new Person();
         p1.setName("Bartosz");
-        p1.setSurname("Szydzik LUJ");
+        p1.setSurname("Szydzik");
         p1.setAge(23);
         p1.setAddress(adr);
-
-
         personRepository.save(p1);
 
-        Person per = personRepository.findByName("Bartosz");
-        System.out.println("Bartek " + per.getSurname());
+        Address adr2 = new Address();
+        adr2.setStreet("Ulica2");
+
+        Person p2 = new Person();
+        p2.setName("Bartosz");
+        p2.setSurname("Teska");
+        p2.setAge(22);
+        p2.setAddress(adr2);
+        personRepository.save(p2);
+
     }
 }

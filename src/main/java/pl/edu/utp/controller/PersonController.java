@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.edu.utp.model.Person;
 import pl.edu.utp.repository.PersonRepository;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,6 +19,7 @@ public class PersonController {
 
     @Autowired
     public PersonController(PersonRepository personRepository) {
+
         this.personRepository = personRepository;
     }
 
@@ -26,25 +28,28 @@ public class PersonController {
         return personRepository.findAll();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @GetMapping(path = "/{id}")
     public Person greetings(@PathVariable("id") Long id) {
         return personRepository.findOne(id);
     }
 
     @PostMapping
-    public void add(@RequestBody Person person) {
+    public void save(@RequestBody Person person) {
         personRepository.save(person);
     }
 
     @PutMapping
-    public void update(@RequestBody Person person) {
+    public void put(@RequestBody Person person) {
         personRepository.save(person);
     }
 
-    @PutMapping(value = "/{id}")
-    public void updateNameById(@PathVariable("id") Integer id, @RequestBody String name) {
-        personRepository.update(id, name);
-
+    @RequestMapping(path = "/test")
+    public Person test(){
+        Person p = new Person();
+        p.setId(1l);
+        p.setName("yyyyy");
+        p.setSurname("xxxxxxxx");
+        return p;
     }
 
     @DeleteMapping(value = "/{id}")

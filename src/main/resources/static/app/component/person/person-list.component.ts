@@ -11,21 +11,30 @@ import {PersonService} from "../../services/person.service";
 export class PersonListComponent{
 
   persons: Person;
+  // persons2: Person[];
   errorMessage : string;
 
   constructor(private _service: PersonService){}
 
   ngOnInit(){
     this.getPersons();
-    // this._service.getPersons().then(res => this.persons = res);
+    // this.getPersons2();
   }
 
   getPersons() {
-    this._service.getAll()
+    this._service.findAll()
       .then(
         value => this.persons = value,
         error =>  this.errorMessage = <any>error
       );
   }
+
+  // getPersons2() {
+  //   this._service.getPersons()
+  //     .subscribe(
+  //       r => this.persons = r,
+  //       error =>  this.errorMessage = <any>error);
+  // }
+
 
 }

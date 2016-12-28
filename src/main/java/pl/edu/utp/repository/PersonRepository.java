@@ -17,13 +17,13 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 
 
     List<Person> findAll();
-    Person findByName(String name);
+    List<Person> findByName(String name);
 
-    @Modifying
-    @Transactional
-    @Query("update Person p set p.name = :newName where p.id = :PersonId")
-    Person update(@Param("PersonId") Integer id, @Param("newName") String name);
+//    @Modifying
+//    @Transactional
+//    @Query("update Person p set p.name = :newName where p.id = :PersonId")
+//    Person update(@Param("PersonId") Integer id, @Param("newName") String name);
 
-    @Transactional
-    void deleteById(Integer id);
+//    @Transactional
+//    void deleteById(Integer id);
 }
