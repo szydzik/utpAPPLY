@@ -22,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'home-page', component: HomePageComponent },
   { path: 'bootstrap4-test', component: Bootstrap4TestComponent },
   { path: '', component: HomePageComponent },
+  { path: 'person-details/:id', component: PersonDetailComponent },
   // { path: '**', component: PageNotFoundComponent }
 ];
 

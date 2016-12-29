@@ -22,7 +22,7 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar">
       <li class="sidebar-main">
-        <a routerLink="/person-list" (click)="toggleSidebar()">
+        <a (click)="toggleSidebar()">
           <img src="../../assets/utp.svg" width="25" height="25"  alt="" class=""/>APPLY
           <span class="menu-icon glyphicon glyphicon-menu-hamburger"></span>
         </a>
@@ -43,9 +43,9 @@
           <li>
             <a routerLink="/person-list">Person List<span class="menu-icon glyphicon glyphicon-list"></span></a>
           </li>
-          <li>
-            <a routerLink="/person-details">Single Person<span class="menu-icon glyphicon glyphicon-pencil"></span></a>
-          </li>
+          <!--<li>-->
+            <!--<a [routerLink]="['/person-details', 1]">Single Person<span class="menu-icon glyphicon glyphicon-pencil"></span></a>-->
+          <!--</li>-->
         </ul>
       </li>
       <!--End Person-->
@@ -60,9 +60,9 @@
           <li>
             <a routerLink="/person-list">College List<span class="menu-icon glyphicon glyphicon-list"></span></a>
           </li>
-          <li>
-            <a routerLink="/person-details">Single College<span class="menu-icon glyphicon glyphicon-pencil"></span></a>
-          </li>
+          <!--<li>-->
+            <!--<a routerLink="/person-details">Single College<span class="menu-icon glyphicon glyphicon-pencil"></span></a>-->
+          <!--</li>-->
         </ul>
       </li>
       <!--End Person-->
@@ -74,7 +74,7 @@
     </ul>
 
 
-    <div class="sidebar-footer" style="height: 100px">
+    <div class="sidebar-footer">
       <div class="col-xs-4">
         <a href="https://github.com/szydzik/utpAPPLY" target="_blank">
           Github
@@ -173,23 +173,23 @@
       <!--Created by<p>Szydzik & Teska</p>-->
     <!--</div>-->
   <!--</div>-->
-  <div>
-  <footer id="footer" class="footer hidden-print navbar-fixed-bottom">
-    <div class="container text-center">
+  <!--<div>-->
+  <!--<footer id="footer" class="footer hidden-print navbar-fixed-bottom">-->
+    <!--<div class="container text-center">-->
 
-      <div>
-        <i class="glyphicon glyphicon-flag" aria-hidden="true"></i> Copyright 2006 by utpAPPLY
-        <span class="hide-xs"></span>
-        <br class="hide-sm hide-md hide-lg">
-        Created by &middot; Szydzik & Teska
-      </div>
+      <!--<div>-->
+        <!--<i class="glyphicon glyphicon-flag" aria-hidden="true"></i> Copyright 2006 by utpAPPLY-->
+        <!--<span class="hide-xs"></span>-->
+        <!--<br class="hide-sm hide-md hide-lg">-->
+        <!--Created by &middot; Szydzik & Teska-->
+      <!--</div>-->
 
-      <div class="project">
-        <a href="https://github.com/szydzik/utpAPPLY">GitHub Project</a> &middot;
-        <a href="https://github.com/szydzik/utpAPPLY/blob/master/README.md">About</a>
-      </div>
-    </div>
-  </footer>
-  </div>
+      <!--<div class="project">-->
+        <!--<a href="https://github.com/szydzik/utpAPPLY">GitHub Project</a> &middot;-->
+        <!--<a href="https://github.com/szydzik/utpAPPLY/blob/master/README.md">About</a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</footer>-->
+  <!--</div>-->
 </div><!-- End Page Wrapper -->
 

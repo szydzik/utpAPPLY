@@ -1,7 +1,8 @@
-import {Component} from "@angular/core";
+import {Component, Input, OnInit} from "@angular/core";
 import {Person} from "../../model/Person";
-import {FormBuilder, FormGroup} from "@angular/forms";
 import {PersonService} from "../../services/person.service";
+import {ActivatedRoute} from "@angular/router";
+
 
 @Component({
   moduleId: module.id,
@@ -9,15 +10,24 @@ import {PersonService} from "../../services/person.service";
   templateUrl: 'person-details.component.html',
   providers: [PersonService],
 })
-export class PersonDetailComponent  {
+export class PersonDetailComponent implements OnInit {
 
   ages = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30];
   errorMessage: string;
-  person: Person;
+  private sub:any;
+  @Input() person: Person;
 
-  constructor(private _service: PersonService){}
+  constructor(
+    private _service: PersonService,
+    private route: ActivatedRoute
+    ) {}
 
   ngOnInit() {
+    // Subscribe to route params
+    this.sub = this.route.params.subscribe(params => {
+      let id = params['id'];
+      console.log("Debug: ID = "+id);
+    });
     this.getPerson();
   }
 
@@ -57,5 +67,9 @@ export class PersonDetailComponent  {
   //       hero  => this.heroes.push(hero),
   //       error =>  this.errorMessage = <any>error);
   // }
+  ngOnDestroy() {
+    // Clean sub to avoid memory leak
+    this.sub.unsubscribe();
+  }
 
 }
