@@ -33,9 +33,10 @@ public class PersonController {
         return personRepository.findOne(id);
     }
 
-    @PostMapping
-    public void save(@RequestBody Person person) {
-        personRepository.save(person);
+    @PostMapping(produces = "application/json", consumes = "application/json")
+    public Person save(@RequestBody Person person) {
+        System.out.println("Debug: "+person.toString());
+        return personRepository.save(person);
     }
 
     @PutMapping

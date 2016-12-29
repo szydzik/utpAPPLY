@@ -7,6 +7,10 @@ export class Person {
   surname: string;
   age: number;
   address: Address;
-  correspondenceAddress : Address;
+
+  constructor(){
+    this.address = new Address();
+  }
+
 
 }

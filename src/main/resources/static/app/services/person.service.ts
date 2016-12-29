@@ -27,18 +27,8 @@ export class PersonService {
       .catch(this.handleError);
   }
 
-  addPerson (person: Person): Promise<Person> {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-    return this._http.post(this.actionUrl, { person }, options)
-      .toPromise()
-      .then(this.extractData)
-      .catch(this.handleError);
-  }
-
-
-  find(): Promise<Person> {
-    return this._http.get(this.actionUrl+'/1')
+  find(id: number): Promise<Person> {
+    return this._http.get(this.actionUrl+'/'+id)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);
@@ -63,17 +53,12 @@ export class PersonService {
     return Promise.reject(errMsg);
   }
 
-
-  // public findById = (id: number): Observable<Person> => {
-  //   return this._http.get(this.actionUrl + id)
-  //     .map((response: Response) => <Person>response.json())
-  //     .catch(this.handleError);
-  // }
-  //////////////////////////////////////////////////////////////////////////
-  // getPersons (): Observable<Person[]> {
-  //   return this._http.get(this.actionUrl)
-  //     .map(this.extractData)
-  //     .catch(this.handleError);
-  // }
+  create(body: Person): Promise<Person> {
+    return this._http
+      .post(this.actionUrl, JSON.stringify(body), {headers: this.headers})
+      .toPromise()
+      .then(this.extractData)
+      .catch(this.handleError);
+  }
 
 }

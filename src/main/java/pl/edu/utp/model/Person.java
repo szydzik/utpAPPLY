@@ -3,6 +3,7 @@ package pl.edu.utp.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,26 +12,24 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Entity
+@ToString
 public class Person {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String surname;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Integer age;
 
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private Address address;
-
-    @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    private Address correspondenceAddress;
 }
 
 

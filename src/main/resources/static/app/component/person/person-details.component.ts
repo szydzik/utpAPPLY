@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from "@angular/core";
 import {Person} from "../../model/Person";
 import {PersonService} from "../../services/person.service";
 import {ActivatedRoute} from "@angular/router";
+import {Address} from "../../model/Address";
 
 
 @Component({
@@ -16,6 +17,7 @@ export class PersonDetailComponent implements OnInit {
   errorMessage: string;
   private sub:any;
   @Input() person: Person;
+  submitted = false;
 
   constructor(
     private _service: PersonService,
@@ -27,12 +29,15 @@ export class PersonDetailComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       let id = params['id'];
       console.log("Debug: ID = "+id);
+      if (id){
+        this.getPerson(id);
+      }else {
+        this.person = new Person();
+      }
     });
-    this.getPerson();
+
   }
 
-
-  submitted = false;
   onSubmit() { this.submitted = true; }
 
   // TODO: Remove this when we're done
@@ -42,9 +47,9 @@ export class PersonDetailComponent implements OnInit {
     this.submitted = false;
   }
 
-  getPerson() {
+  getPerson(id: number) {
     this._service
-      .find()
+      .find(id)
       .then((result) => {
         return result;
       })
@@ -60,16 +65,16 @@ export class PersonDetailComponent implements OnInit {
     });
   }
 
-  // addPerson (name: string) {
-  //   if (!name) { return; }
-  //   this._service.addPerson(this.person)
-  //     .then(
-  //       hero  => this.heroes.push(hero),
-  //       error =>  this.errorMessage = <any>error);
-  // }
   ngOnDestroy() {
     // Clean sub to avoid memory leak
     this.sub.unsubscribe();
+  }
+
+  add(): void {
+    this._service.create(this.person)
+      .then(p => {
+        this.person=p;
+      });
   }
 
 }
