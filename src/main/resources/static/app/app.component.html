@@ -28,21 +28,60 @@
         </a>
       </li>
       <li class="sidebar-title"><span>NAVIGATION</span></li>
+
       <li class="sidebar-list">
-        <a routerLink="/person-list">Person List<span class="menu-icon glyphicon glyphicon-list-alt"></span></a>
+        <a href="#">Home<span class="menu-icon glyphicon glyphicon-home"></span></a>
       </li>
+
+      <!--Person-->
+      <li class="sidebar-list">
+        <a href="javascript:;" data-toggle="collapse" data-target="#person">Person
+          <i class="fa fa-fw fa-caret-down"></i>
+          <span class="menu-icon glyphicon glyphicon-user"></span>
+        </a>
+        <ul id="person" class="collapse nav list-group">
+          <li>
+            <a routerLink="/person-list">Person List<span class="menu-icon glyphicon glyphicon-list"></span></a>
+          </li>
+          <li>
+            <a routerLink="/person-details">Single Person<span class="menu-icon glyphicon glyphicon-pencil"></span></a>
+          </li>
+        </ul>
+      </li>
+      <!--End Person-->
+
+      <!--College-->
+      <li class="sidebar-list">
+        <a href="javascript:;" data-toggle="collapse" data-target="#college">College
+          <i class="fa fa-fw fa-caret-down"></i>
+          <span class="menu-icon glyphicon glyphicon-book"></span>
+        </a>
+        <ul id="college" class="collapse nav list-group">
+          <li>
+            <a routerLink="/person-list">College List<span class="menu-icon glyphicon glyphicon-list"></span></a>
+          </li>
+          <li>
+            <a routerLink="/person-details">Single College<span class="menu-icon glyphicon glyphicon-pencil"></span></a>
+          </li>
+        </ul>
+      </li>
+      <!--End Person-->
+
+
       <li class="sidebar-list">
         <a routerLink="/person-details">Person Details Test <span class="menu-icon glyphicon glyphicon-pencil"></span></a>
       </li>
     </ul>
-    <div class="sidebar-footer">
+
+
+    <div class="sidebar-footer" style="height: 100px">
       <div class="col-xs-4">
-        <a href="https://github.com/ziyasal/rdash-angular2" target="_blank">
+        <a href="https://github.com/szydzik/utpAPPLY" target="_blank">
           Github
         </a>
       </div>
       <div class="col-xs-4">
-        <a href="https://github.com/ziyasal/rdash-angular2/blob/master/README.md" target="_blank">
+        <a href="https://github.com/szydzik/utpAPPLY/blob/master/README.md" target="_blank">
           About
         </a>
       </div>
@@ -126,5 +165,31 @@
 
     </div><!-- End Page Content -->
   </div><!-- End Content Wrapper -->
+
+  <!--<div class="container text-center">-->
+    <!--<div>-->
+      <!--<i class="fa fa-flag" aria-hidden="true"></i> Copyright 2006 by utpAPPLY-->
+      <!--<span class="hide-xs">&middot;</span><br class="hide-sm hide-md hide-lg">-->
+      <!--Created by<p>Szydzik & Teska</p>-->
+    <!--</div>-->
+  <!--</div>-->
+  <div>
+  <footer id="footer" class="footer hidden-print navbar-fixed-bottom">
+    <div class="container text-center">
+
+      <div>
+        <i class="glyphicon glyphicon-flag" aria-hidden="true"></i> Copyright 2006 by utpAPPLY
+        <span class="hide-xs"></span>
+        <br class="hide-sm hide-md hide-lg">
+        Created by &middot; Szydzik & Teska
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/szydzik/utpAPPLY">GitHub Project</a> &middot;
+        <a href="https://github.com/szydzik/utpAPPLY/blob/master/README.md">About</a>
+      </div>
+    </div>
+  </footer>
+  </div>
 </div><!-- End Page Wrapper -->
 

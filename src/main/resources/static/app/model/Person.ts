@@ -7,5 +7,6 @@ export class Person {
   surname: string;
   age: number;
   address: Address;
+  correspondenceAddress : Address;
 
 }

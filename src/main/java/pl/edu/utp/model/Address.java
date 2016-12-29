@@ -22,9 +22,11 @@ public class Address {
     @Id
     @GeneratedValue
     private Long id;
-    private String street;
+    private String streetAddress1;
+    private String streetAddress2;
+    private String postalCode;
+    private String city;
+    private String province;
+    private String country;
 
-    public Address(String street){
-        this.street = street;
-    }
 }

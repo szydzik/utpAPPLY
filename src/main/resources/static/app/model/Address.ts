@@ -1,8 +1,12 @@
 
 export class Address {
-  constructor(
-    id : number,
-    street: string
-  ){}
+
+  id : number;
+  streetAddress1 : string;
+  streetAddress2 : string;
+  postalCode : string;
+  city : string;
+  province : string;
+  country : string;
 
 }

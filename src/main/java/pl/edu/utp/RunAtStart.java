@@ -25,7 +25,7 @@ public class RunAtStart {
     public void runAtStart() {
 
         Address adr = new Address();
-        adr.setStreet("Ulica");
+        adr.setStreetAddress1("Ulica");
 
         Person p1 = new Person();
         p1.setName("Bartosz");
@@ -35,7 +35,7 @@ public class RunAtStart {
         personRepository.save(p1);
 
         Address adr2 = new Address();
-        adr2.setStreet("Ulica2");
+        adr2.setStreetAddress1("Ulica2");
 
         Person p2 = new Person();
         p2.setName("Bartosz");

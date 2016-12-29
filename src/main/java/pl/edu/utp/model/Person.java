@@ -29,12 +29,8 @@ public class Person {
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private Address address;
 
-    public Person(String name, String surname, Integer age, Address address) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.address = address;
-    }
+    @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    private Address correspondenceAddress;
 }
 
 
