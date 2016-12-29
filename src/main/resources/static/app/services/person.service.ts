@@ -61,4 +61,12 @@ export class PersonService {
       .catch(this.handleError);
   }
 
+  delete(id: number): Promise<void> {
+    let url = this.actionUrl+'/'+id;
+    return this._http.delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
+
 }

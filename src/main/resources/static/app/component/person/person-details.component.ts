@@ -77,4 +77,10 @@ export class PersonDetailComponent implements OnInit {
       });
   }
 
+  delete(): void {
+    this._service
+      .delete(this.person.id)
+      .then(() => null);
+  }
+
 }

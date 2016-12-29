@@ -86,5 +86,6 @@
 
     <button type="submit" class="btn btn-default" [disabled]="!personDetailForm.form.valid" (click)="add();">Submit</button>
     <button type="button" class="btn btn-default" (click)="newPerson(); personDetailForm.reset()">New Person</button>
+    <button type="button" class="btn btn-default" (click)="delete();" routerLink="/person-list">Delete Person</button>
   </form>
 </div>
