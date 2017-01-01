@@ -1,5 +1,15 @@
 <table class="table table-striped">
   <thead>
+
+
+  <div class="form-group">
+    <input class="form-control form-control-sm" #search (keyup)="find(search.value)" placeholder="Search"/>
+  </div>
+  <!--<tr class="form-group input-group">-->
+    <!--<input type="text" class="form-control">-->
+    <!--<span class="input-group-btn"><button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button></span>-->
+  <!--</tr>-->
+<!--[(ngModel)]="searchFilterText"-->
   <tr>
     <th>#</th>
     <th>Name</th>
@@ -9,12 +19,16 @@
   </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of persons;" [routerLink]="['/person-details', item.id]">
+    <!--<tr *ngFor="let item of persons;" [routerLink]="['/person-details', item.id]">-->
+    <tr *ngFor="let item of persons;" [routerLink]="['/person-list', item.id]">
       <th>{{item.id}}</th>
       <td>{{item.name}}</td>
       <td>{{item.surname}}</td>
       <td>{{item.age}}</td>
       <td>{{item.address.streetAddress1}}</td>
+      <td><button class="btn btn-success" [routerLink]="['/person-details', item.id]">Update</button>
+      <button class="btn btn-danger" (click)="delete(item.id);" routerLink="/person-list">Delete</button></td>
     </tr>
+
   </tbody>
 </table>

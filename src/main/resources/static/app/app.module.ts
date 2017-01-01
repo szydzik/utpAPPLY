@@ -16,6 +16,7 @@ import {HomePageComponent} from "./component/homepage/home-page.component";
 import {FormsModule} from "@angular/forms";
 import {Configuration} from "./app.constants";
 
+
 const appRoutes: Routes = [
   { path: 'person-list', component: PersonListComponent },
   { path: 'person-details', component: PersonDetailComponent },
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'person-details/:id', component: PersonDetailComponent },
   // { path: '**', component: PageNotFoundComponent }
+
 ];
 
 @NgModule({
