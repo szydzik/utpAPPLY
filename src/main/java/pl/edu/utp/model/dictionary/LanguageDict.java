@@ -1,34 +1,34 @@
-package pl.edu.utp.model;
+package pl.edu.utp.model.dictionary;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
-
-/**
- * Created by Bartosz on 2016-12-16.
- */
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-public class Address {
+@ToString
+public class LanguageDict {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String streetAddress1;
-    private String streetAddress2;
-    private String postalCode;
-    private String city;
-    private String province;
-    private String country;
+    /**
+     * https://pl.wiktionary.org/wiki/Wikis%C5%82ownik:Kody_j%C4%99zyk%C3%B3w
+     * Kod języka: PL, EN, ES, DE
+     */
+    private String code;
 
+    /**
+     * Język: English, Polski, Espanol, Deutsch
+     */
+    private String language;
 }

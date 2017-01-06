@@ -16,18 +16,21 @@
     <th>Surname</th>
     <th>Age</th>
     <th>Street</th>
+    <th>Update<th>
   </tr>
   </thead>
   <tbody>
     <!--<tr *ngFor="let item of persons;" [routerLink]="['/person-details', item.id]">-->
-    <tr *ngFor="let item of persons;" [routerLink]="['/person-list', item.id]">
+    <tr *ngFor="let item of persons;">
       <th>{{item.id}}</th>
       <td>{{item.name}}</td>
       <td>{{item.surname}}</td>
       <td>{{item.age}}</td>
       <td>{{item.address.streetAddress1}}</td>
-      <td><button class="btn btn-success" [routerLink]="['/person-details', item.id]">Update</button>
-      <button class="btn btn-danger" (click)="delete(item.id);" routerLink="/person-list">Delete</button></td>
+      <td>
+        <button class="btn btn-success" [routerLink]="['/person-details', item.id]">Update</button>
+        <button class="btn btn-danger" (click)="delete(item.id);">Delete</button>
+      </td>
     </tr>
 
   </tbody>

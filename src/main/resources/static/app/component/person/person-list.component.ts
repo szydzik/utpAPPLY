@@ -31,6 +31,10 @@ export class PersonListComponent{
       );
   }
 
+  refresh(){
+    this.getPersons();
+  }
+
 
   // getPersons2() {
   //   this._service.getPersons()
@@ -44,12 +48,12 @@ export class PersonListComponent{
       .delete(id)
       .then(() => null);
     this.getPersons();
+    this.refresh();
   }
 
   find(value: any): void {
-    this._service.find(value)
-
-      .then(() => null);
+    // this._service.find(value)
+    //   .then(() => null);
     this.getPersons();
   }
   // delete(person: Person): void {

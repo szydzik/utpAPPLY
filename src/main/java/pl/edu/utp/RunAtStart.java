@@ -1,12 +1,16 @@
 package pl.edu.utp;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.jdbc.datasource.init.DataSourceInitializer;
+import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.stereotype.Component;
 import pl.edu.utp.repository.PersonRepository;
 import pl.edu.utp.model.Address;
 import pl.edu.utp.model.Person;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
 
 /**
  * Created by Bartosz on 2016-12-16.
@@ -32,6 +36,7 @@ public class RunAtStart {
         p1.setSurname("Szydzik");
         p1.setAge(23);
         p1.setAddress(adr);
+        p1.setDateOfBirth(new Date());
         personRepository.save(p1);
 
         Address adr2 = new Address();
@@ -42,6 +47,7 @@ public class RunAtStart {
         p2.setSurname("Teska");
         p2.setAge(22);
         p2.setAddress(adr2);
+        p2.setDateOfBirth(new Date());
         personRepository.save(p2);
 
     }

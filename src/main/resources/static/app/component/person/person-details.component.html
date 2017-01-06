@@ -26,6 +26,13 @@
     </div>
 
     <div class="form-group">
+      <label for="dateOfBirth">Date of Birth</label>
+      <input type="date" class="form-control" id="dateOfBirth" required
+             [(ngModel)]="person.dateOfBirth" name="dateOfBirth"
+             #surname="ngModel">
+    </div>
+
+    <div class="form-group">
       <label for="age">Age</label>
       <select class="form-control" id="age"
                 required
@@ -86,6 +93,6 @@
 
     <button type="submit" class="btn btn-default" [disabled]="!personDetailForm.form.valid" (click)="add();" routerLink="/person-list">Submit</button>
     <button type="button" class="btn btn-default" (click)="newPerson(); personDetailForm.reset()">New Person</button>
-    <button type="button" class="btn btn-default" (click)="delete();" routerLink="/person-list">Delete Person</button>
+    <button type="button" class="btn btn-default" (click)="delete();goBack();">Delete Person</button>
   </form>
 </div>

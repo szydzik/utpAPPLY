@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from "@angular/core";
 import {Person} from "../../model/Person";
 import {PersonService} from "../../services/person.service";
 import {ActivatedRoute} from "@angular/router";
-import {Address} from "../../model/Address";
+import {Location} from "@angular/common";
 
 
 @Component({
@@ -21,7 +21,8 @@ export class PersonDetailComponent implements OnInit {
 
   constructor(
     private _service: PersonService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
     ) {}
 
   ngOnInit() {
@@ -81,6 +82,10 @@ export class PersonDetailComponent implements OnInit {
     this._service
       .delete(this.person.id)
       .then(() => null);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

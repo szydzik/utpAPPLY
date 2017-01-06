@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,17 +20,36 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Imię
+     */
     @Column(nullable = true)
     private String name;
 
+    /**
+     * Nazwisko
+     */
     @Column(nullable = true)
     private String surname;
 
+    /**
+     * Wiek
+     */
     @Column(nullable = true)
     private Integer age;
 
+    /**
+     * Data urodzenia
+     */
+    @Column(nullable = true)
+    private Date dateOfBirth;
+
+    /**
+     * Adres
+     */
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private Address address;
+
 }
 
 
