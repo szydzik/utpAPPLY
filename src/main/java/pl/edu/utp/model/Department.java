@@ -26,11 +26,11 @@ public class Department {
      */
     private String name;
 
-    /**
-     * Uczelnia do której należy wydział
-     */
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private University university;
+//    /**
+//     * Uczelnia do której należy wydział
+//     */
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    private University university;
 
     /**
      * Adres wydziału

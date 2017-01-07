@@ -1,12 +1,13 @@
 package pl.edu.utp.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import pl.edu.utp.model.views.Views;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 @AllArgsConstructor
@@ -18,36 +19,42 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonView(Views.ListView.class)
     private Long id;
 
     /**
      * Imię
      */
     @Column(nullable = true)
+    @JsonView(Views.ListView.class)
     private String name;
 
     /**
      * Nazwisko
      */
     @Column(nullable = true)
+    @JsonView(Views.ListView.class)
     private String surname;
 
     /**
      * Wiek
      */
     @Column(nullable = true)
+    @JsonView(Views.ListView.class)
     private Integer age;
 
     /**
      * Data urodzenia
      */
     @Column(nullable = true)
+    @JsonView(Views.ListView.class)
     private Date dateOfBirth;
 
     /**
      * Adres
      */
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    @JsonView(Views.Details.class)
     private Address address;
 
 }

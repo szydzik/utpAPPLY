@@ -14,8 +14,7 @@
     <th>#</th>
     <th>Name</th>
     <th>Surname</th>
-    <th>Age</th>
-    <th>Street</th>
+    <th>Date of birth</th>
     <th>Update<th>
   </tr>
   </thead>
@@ -25,8 +24,7 @@
       <th>{{item.id}}</th>
       <td>{{item.name}}</td>
       <td>{{item.surname}}</td>
-      <td>{{item.age}}</td>
-      <td>{{item.address.streetAddress1}}</td>
+      <td>{{item.dateOfBirth}}</td>
       <td>
         <button class="btn btn-success" [routerLink]="['/person-details', item.id]">Update</button>
         <button class="btn btn-danger" (click)="delete(item.id);">Delete</button>

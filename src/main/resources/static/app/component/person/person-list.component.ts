@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {Person} from "../../model/Person";
 import {PersonService} from "../../services/person.service";
+import {PersonViewTO} from "../../model/PersonViewTO";
 
 
 @Component({
@@ -12,7 +13,8 @@ import {PersonService} from "../../services/person.service";
 export class PersonListComponent{
 
   persons: Person;
-  // persons2: Person[];
+  personVievTOs: PersonViewTO;
+
   errorMessage: string;
 
   constructor(private _service: PersonService){
@@ -51,11 +53,11 @@ export class PersonListComponent{
     this.refresh();
   }
 
-  find(value: any): void {
-    // this._service.find(value)
-    //   .then(() => null);
-    this.getPersons();
-  }
+  // find(value: any): void {
+  //   // this._service.find(value)
+  //   //   .then(() => null);
+  //   this.getPersons();
+  // }
   // delete(person: Person): void {
   //   this._service                      //Czemu to nie działa, a metoda wyżej działa ???
   //     .delete(person.id)

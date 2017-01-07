@@ -15,15 +15,6 @@ import java.util.List;
  */
 public interface PersonRepository extends CrudRepository<Person, Long> {
 
-
     List<Person> findAll();
-    List<Person> findByName(String name);
 
-//    @Modifying
-//    @Transactional
-//    @Query("update Person p set p.name = :newName where p.id = :PersonId")
-//    Person update(@Param("PersonId") Integer id, @Param("newName") String name);
-
-//    @Transactional
-//    void deleteById(Integer id);
 }

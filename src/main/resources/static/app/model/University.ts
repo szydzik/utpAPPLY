@@ -1,17 +1,15 @@
 import {Address} from "./Address";
+import {Department} from "./Department";
 
-export class Person {
+export class University {
 
   id : number;
   name : string;
-  surname: string;
-  age: number;
-  dateOfBirth: Date;
+  departments: Department[];
   address: Address;
 
   constructor(){
     this.address = new Address();
-    this.dateOfBirth = new Date();
   }
 
 }

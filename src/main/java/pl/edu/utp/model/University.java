@@ -23,7 +23,9 @@ public class University {
     @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private Address address;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "university")
+//    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "university")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable
     private List<Department> departments;
 
 }
