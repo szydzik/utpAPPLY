@@ -19,9 +19,14 @@ import {UniversityDetailsComponent} from "./component/university/university-deta
 import {UniversityListComponent} from "./component/university/university-list.component";
 import {DepartmentDetailsComponent} from "./component/department/department-details.component";
 import {DepartmentListComponent} from "./component/department/department-list.component";
-
+import {PostService} from "./auth/post.service";
+import {LoginComponent} from "./auth/log-in/log-in.component";
 
 const appRoutes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: '/login',
+  // },
   { path: 'person-list', component: PersonListComponent },
   { path: 'person-details', component: PersonDetailsComponent },
 
@@ -37,6 +42,16 @@ const appRoutes: Routes = [
   { path: 'home-page', component: HomePageComponent },
   { path: '', component: HomePageComponent },
   { path: 'person-details/:id', component: PersonDetailsComponent },
+
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  // {
+  //   path: 'add',
+  //   component: PersonDetailsComponent, canActivate: [AuthGuard]
+  // }
+
   // { path: '**', component: PageNotFoundComponent }
 
 ];
@@ -65,10 +80,13 @@ const appRoutes: Routes = [
     UniversityListComponent,
     DepartmentDetailsComponent,
     DepartmentListComponent,
+    LoginComponent,
   ],
   providers: [
     PersonService,
     Configuration,
+    PostService,
+    // LoginService,
   ],
   bootstrap:    [ AppComponent ]
 })

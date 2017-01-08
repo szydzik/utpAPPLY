@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Person} from "./model/Person";
 
 @Component({
   moduleId: module.id,
